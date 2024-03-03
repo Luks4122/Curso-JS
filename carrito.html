@@ -40,86 +40,15 @@
                 Carrito
             </h2>
             <div class="contenedor-carrito">
-                <p class="carrito-vacio">
+                <p id="carrito-vacio" class="carrito-vacio">
                     <i class="bi bi-emoji-frown"></i> Tu carrito está vacío 
                 </p>
-                <div class="carrito-productos disabled">
-                    <div class="carrito-producto">
-                        <img class="carrito-producto-imagen" src="./img/fromsoftware/bloodborne-noenpc.jpg" alt="">
-                        <div class="carrito-producto-titulo">
-                            <small>Título</small>
-                            <h3>
-                                Bloodborne
-                            </h3>
-                        </div>
-                        <div class="carrito-producto-cantidad">
-                            <small>Cantidad</small>
-                            <p>
-                                1
-                            </p>
-                        </div>
-                        <div class="carrito-producto-precio">
-                            <small>
-                                Precio
-                            </small>
-                            <p>
-                                $20
-                            </p>
-                        </div>
-                        <div class="carrito-producto-subtotal">
-                            <small>
-                                Subtotal
-                            </small>
-                            <p>
-                                $20
-                            </p>
-                        </div>
-                        <button class="carrito-producto-eliminar">
-                            <i class="bi bi-trash-fill">
-
-                            </i>
-                        </button>
-                    </div>
-                    <div class="carrito-producto">
-                        <img class="carrito-producto-imagen" src="./img/fromsoftware/ds1.jpg" alt="">
-                        <div class="carrito-producto-titulo">
-                            <small>Título</small>
-                            <h3>
-                                Dark Souls Remastered
-                            </h3>
-                        </div>
-                        <div class="carrito-producto-cantidad">
-                            <small>Cantidad</small>
-                            <p>
-                                1
-                            </p>
-                        </div>
-                        <div class="carrito-producto-precio">
-                            <small>
-                                Precio
-                            </small>
-                            <p>
-                                $40
-                            </p>
-                        </div>
-                        <div class="carrito-producto-subtotal">
-                            <small>
-                                Subtotal
-                            </small>
-                            <p>
-                                $40
-                            </p>
-                        </div>
-                        <button class="carrito-producto-eliminar">
-                            <i class="bi bi-trash-fill">
-                                
-                            </i>
-                        </button>
-                    </div>
+                <div id="carrito-productos" class="carrito-productos disabled">
+                    <!-- Se completa con JS -->
                 </div>
-                <div class="carrito-acciones disabled">
+                <div id="carrito-acciones" class="carrito-acciones disabled">
                     <div class="carrito-acciones-izquierda">
-                        <button class="carrito-acciones-vaciar">
+                        <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">
                             Vaciar carrito
                         </button>
                     </div>
@@ -132,12 +61,12 @@
                                 $60
                             </p>
                         </div>
-                        <button class="carrito-acciones-comprar">
+                        <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">
                             Comprar ahora
                         </button>
                     </div>
                 </div>
-                <p class="carrito-comprado disabled">
+                <p id="carrito-comprado" class="carrito-comprado disabled">
                     <i class="bi bi-emoji-laughing"></i> Muchas gracias por tu compra.
                 </p>
             </div>
