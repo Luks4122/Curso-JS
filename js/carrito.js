@@ -17,12 +17,12 @@ function cargarProductosCarrito() {
         contenedorCarritoProductos.classList.remove("disabled");
         contenedorCarritoAcciones.classList.remove("disabled");
         contenedorCarritoComprado.classList.add("disabled");
-    
+
         contenedorCarritoProductos.innerHTML = "";
-    
-    
-    productosEnCarrito.forEach(producto => {
-            const div =  document.createElement("div");
+
+
+        productosEnCarrito.forEach(producto => {
+            const div = document.createElement("div");
             div.classList.add("carrito-producto");
             div.innerHTML = `
             <img class="carrito-producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
@@ -59,10 +59,10 @@ function cargarProductosCarrito() {
                     </i>
                 </button>
             `
-    
+
             contenedorCarritoProductos.append(div);
-    })
-    
+        })
+
     } else {
         contenedorCarritoVacio.classList.remove("disabled");
         contenedorCarritoProductos.classList.add("disabled");
@@ -85,6 +85,27 @@ function actualizarBotonesEliminar() {
 }
 
 function elminarDelCarrito(e) {
+
+    Toastify({
+        text: "Producto eliminado",
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, #293e99, #678cf3)",
+            borderRadius: "2rem",
+            textTransform: "uppercase",
+            fontSize: "0.75rem"
+        },
+        offset: {
+            x: '1.5rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: '1.5rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+        },
+        onClick: function () { } // Callback after click
+    }).showToast();
+
     const idBoton = e.currentTarget.id;
     const productoEliminado = productosEnCarrito.find(producto => producto.id === idBoton);
     const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
@@ -98,10 +119,30 @@ function elminarDelCarrito(e) {
 
 botonVaciar.addEventListener("click", vaciarCarrito);
 function vaciarCarrito() {
-    
-    productosEnCarrito.length = 0;
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
-    cargarProductosCarrito();
+
+    Swal.fire({
+        title: "¿Estás seguro?",
+        icon: "question",
+        html: `
+            Se eliminarán ${productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0)} productos del carrito.
+        `,
+        showCancelButton: true,
+        focusConfirm: false,
+        confirmButtonText: `
+            Sí
+        `,
+        cancelButtonText: `
+            No
+        `,
+    }).then((result) => {
+        if (result.isConfirmed) {    
+            productosEnCarrito.length = 0; localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+            cargarProductosCarrito();
+        }
+    });
+
+
+
 
 }
 
@@ -113,7 +154,7 @@ function actualizarTotal() {
 
 botonComprar.addEventListener("click", comprarCarrito);
 function comprarCarrito() {
-    
+
     productosEnCarrito.length = 0;
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 

@@ -1,130 +1,12 @@
-const productos = [
-    // FromSoftware  - - - - - - - - - - - - - - - - - - - - -
-    {
-        id: "dark-souls-1",
-        titulo: "Dark Souls Remastered",
-        imagen: "./img/fromsoftware/ds1.jpg",
-        categoria: {
-            nombre: "FromSoftware",
-            id: "fromsoftware",
-        },
-        precio: 40
-    },
-    {
-        id: "dark-souls-2",
-        titulo: "Dark Souls II",
-        imagen: "./img/fromsoftware/ds2.jpg",
-        categoria: {
-            nombre: "FromSoftware",
-            id: "fromsoftware",
-        },
-        precio: 40
-    },
-    {
-        id: "dark-souls-3",
-        titulo: "Dark Souls III",
-        imagen: "./img/fromsoftware/ds3.jpg",
-        categoria: {
-            nombre: "FromSoftware",
-            id: "fromsoftware",
-        },
-        precio: 60
-    },
-    {
-        id: "bloodborne",
-        titulo: "Bloodborne",
-        imagen: "./img/fromsoftware/bloodborne-noenpc.jpg",
-        categoria: {
-            nombre: "FromSoftware",
-            id: "fromsoftware",
-        },
-        precio: 20
-    }
-    // Capcom  - - - - - - - - - - - - - - - - - - - - -
-    ,
-    {
-        id: "dmc-collection",
-        titulo: "DMC HD COLLECTION",
-        imagen: "./img/capcom/dmc-hd-collection.jpg",
-        categoria: {
-            nombre: "Capcom",
-            id: "capcom",
-        },
-        precio: 30
-    },
-    {
-        id: "dmc-4",
-        titulo: "DMC 4",
-        imagen: "./img/capcom/dmc4.jpg",
-        categoria: {
-            nombre: "Capcom",
-            id: "capcom",
-        },
-        precio: 20
-    },
-    {
-        id: "dmc-4-se",
-        titulo: "DMC 4 SE",
-        imagen: "./img/capcom/dmc4-se.jpg",
-        categoria: {
-            nombre: "Capcom",
-            id: "capcom",
-        },
-        precio: 25
-    },
-    {
-        id: "dmc-5",
-        titulo: "DMC 5",
-        imagen: "./img/capcom/dmc5.jpg",
-        categoria: {
-            nombre: "Capcom",
-            id: "capcom",
-        },
-        precio: 30
-    }
-    //God of War - - - - - - - - - - - - - - - - - - - - -
-    ,
-    {
-        id: "gow-collection",
-        titulo: "God of War Collection",
-        imagen: "./img/sm-studio/gow-collection.jpg",
-        categoria: {
-            nombre: "Santa Monica",
-            id: "santamonica",
-        },
-        precio: 25
-    },
-    {
-        id: "gow-3",
-        titulo: "God of War III",
-        imagen: "./img/sm-studio/gow3.jpg",
-        categoria: {
-            nombre: "Santa Monica",
-            id: "santamonica",
-        },
-        precio: 20
-    },
-    {
-        id: "gow-ascension",
-        titulo: "God of War Ascension",
-        imagen: "./img/sm-studio/gow-ascension.jpg",
-        categoria: {
-            nombre: "Santa Monica",
-            id: "santamonica",
-        },
-        precio: 25
-    },
-    {
-        id: "gow-2018",
-        titulo: "God of War (2018)",
-        imagen: "./img/sm-studio/gow-2018.jpg",
-        categoria: {
-            nombre: "Santa Monica",
-            id: "santamonica",
-        },
-        precio: 50
-    }
-]
+let productos = [];
+
+fetch ("./js/productos.json")
+    .then(response => response.json ())
+    .then(data =>{
+        productos = data;
+        cargarProductos(productos);
+
+    })
 
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategorias = document.querySelectorAll(".boton-categoria");
@@ -164,11 +46,9 @@ function cargarProductos (productosElegidos){
     })
 
     actualizarBotonesAgregar();
-    console.log(botonesAgregar);
 
 }
 
-cargarProductos(productos);
 
 botonesCategorias.forEach(boton =>{
     boton.addEventListener ("click", (e) => {
@@ -215,6 +95,27 @@ if (productosEnCarritoLS) {
 
 
 function agregarAlCarrito (e) {
+
+    Toastify({
+        text: "Producto agregado",
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+        background: "linear-gradient(to right, #293e99, #678cf3)",
+        borderRadius: "2rem",
+        textTransform: "uppercase",
+        fontSize: "0.75rem"
+        },
+        offset: {
+            x: '1.5rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: '1.5rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+        },
+        onClick: function(){} // Callback after click
+    }).showToast();
+
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id === idBoton);
     

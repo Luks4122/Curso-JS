@@ -1,0 +1,127 @@
+[
+
+    {
+        "id": "dark-souls-1",
+        "titulo": "Dark Souls Remastered",
+        "imagen": "./img/fromsoftware/ds1.jpg",
+        "categoria": {
+            "nombre": "FromSoftware",
+            "id": "fromsoftware"
+        },
+        "precio": 40
+    },
+    {
+        "id": "dark-souls-2",
+        "titulo": "Dark Souls II",
+        "imagen": "./img/fromsoftware/ds2.jpg",
+        "categoria": {
+            "nombre": "FromSoftware",
+            "id": "fromsoftware"
+        },
+        "precio": 40
+    },
+    {
+        "id": "dark-souls-3",
+        "titulo": "Dark Souls III",
+        "imagen": "./img/fromsoftware/ds3.jpg",
+        "categoria": {
+            "nombre": "FromSoftware",
+            "id": "fromsoftware"
+        },
+        "precio": 60
+    },
+    {
+        "id": "bloodborne",
+        "titulo": "Bloodborne",
+        "imagen": "./img/fromsoftware/bloodborne-noenpc.jpg",
+        "categoria": {
+            "nombre": "FromSoftware",
+            "id": "fromsoftware"
+        },
+        "precio": 20
+    }
+
+    ,
+    {
+        "id": "dmc-collection",
+        "titulo": "DMC HD COLLECTION",
+        "imagen": "./img/capcom/dmc-hd-collection.jpg",
+        "categoria": {
+            "nombre": "Capcom",
+            "id": "capcom"
+        },
+        "precio": 30
+    },
+    {
+        "id": "dmc-4",
+        "titulo": "DMC 4",
+        "imagen": "./img/capcom/dmc4.jpg",
+        "categoria": {
+            "nombre": "Capcom",
+            "id": "capcom"
+        },
+        "precio": 20
+    },
+    {
+        "id": "dmc-4-se",
+        "titulo": "DMC 4 SE",
+        "imagen": "./img/capcom/dmc4-se.jpg",
+        "categoria": {
+            "nombre": "Capcom",
+            "id": "capcom"
+        },
+        "precio": 25
+    },
+    {
+        "id": "dmc-5",
+        "titulo": "DMC 5",
+        "imagen": "./img/capcom/dmc5.jpg",
+        "categoria": {
+            "nombre": "Capcom",
+            "id": "capcom"
+        },
+        "precio": 30
+    }
+
+    ,
+    {
+        "id": "gow-collection",
+        "titulo": "God of War Collection",
+        "imagen": "./img/sm-studio/gow-collection.jpg",
+        "categoria": {
+            "nombre": "Santa Monica",
+            "id": "santamonica"
+        },
+        "precio": 25
+    },
+    {
+        "id": "gow-3",
+        "titulo": "God of War III",
+        "imagen": "./img/sm-studio/gow3.jpg",
+        "categoria": {
+            "nombre": "Santa Monica",
+            "id": "santamonica"
+        },
+        "precio": 20
+    },
+    {
+        "id": "gow-ascension",
+        "titulo": "God of War Ascension",
+        "imagen": "./img/sm-studio/gow-ascension.jpg",
+        "categoria": {
+            "nombre": "Santa Monica",
+            "id": "santamonica"
+        },
+        "precio": 25
+    },
+    {
+        "id": "gow-2018",
+        "titulo": "God of War (2018)",
+        "imagen": "./img/sm-studio/gow-2018.jpg",
+        "categoria": {
+            "nombre": "Santa Monica",
+            "id": "santamonica"
+        },
+        "precio": 50
+    }
+]
